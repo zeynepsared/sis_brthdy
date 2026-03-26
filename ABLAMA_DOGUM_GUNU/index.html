@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BETÜŞŞŞ💕</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+    body {
+      margin: 0;
+      font-family: "Poppins", sans-serif;
+      background-color: #fff7f6;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    header {
+      background-color: #ffd9d4;
+      color: #6d3b3b;
+      text-align: center;
+      padding: 30px 10px;
+      font-size: 1.6rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    /* 🌸 CAROUSEL */
+    .carousel {
+      position: relative;
+      width: 80%;
+      max-width: 800px;
+      margin: 30px auto 0;
+      overflow: hidden;
+      border-radius: 20px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .carousel-inner {
+      display: flex;
+      transition: transform 1s ease;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      position: relative;
+    }
+
+    .carousel img {
+      width: 100%;
+      height: 400px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: rgba(0,0,0,0.4);
+      color: white;
+      padding: 10px 25px;
+      border-radius: 20px;
+      text-align: center;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+    }
+
+    .prev, .next {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(255,255,255,0.7);
+      color: #6d3b3b;
+      border: none;
+      border-radius: 50%;
+      font-size: 24px;
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .prev:hover, .next:hover {
+      background-color: #ffd9d4;
+    }
+
+    .prev { left: 10px; }
+    .next { right: 10px; }
+
+    /* ANA KARTLAR */
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 40px 20px;
+    }
+
+    .card {
+      background-color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-radius: 20px;
+      max-width: 400px;
+      padding: 25px;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .tile-image {
+      width: 100%;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .card-title {
+      color: #d16d6a;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+
+    .card-text {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    /* 💗 GALERİ */
+    .gallery {
+      background-color: #fff0ee;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .gallery h2 {
+      color: #c75a5a;
+      margin-bottom: 20px;
+    }
+
+    .photos {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .photos img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: 0.3s;
+    }
+
+    .photos img:hover {
+      transform: scale(1.05);
+    }
+
+    /* 🌼 YENİ: İKİ YAN YANA CARD (sol fotoğraf + sağ metin) */
+    .twin-section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      padding: 50px 20px;
+      background-color: #fffafa;
+    }
+
+    .twin-card {
+      background-color: #ffffff;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      max-width: 500px;
+      padding: 20px;
+      transition: transform 0.2s ease;
+    }
+
+    .twin-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .twin-card img {
+      width: 180px;
+      height: 180px;
+      border-radius: 15px;
+      margin-right: 20px;
+      float: left;
+      shape-outside: circle(45%);
+      clip-path: circle(45%);
+    }
+
+    .twin-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: #444;
+    }
+
+    .favorites-section {
+  background-color: #fff4f3;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.favorites-section h2 {
+  color: #d16d6a;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+}
+
+.favorites-scroll {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px;
+  scroll-behavior: smooth;
+  padding: 15px 10px;
+}
+
+.favorites-scroll::-webkit-scrollbar {
+  height: 10px;
+}
+
+.favorites-scroll::-webkit-scrollbar-thumb {
+  background-color: #f2b7b1;
+  border-radius: 10px;
+}
+
+.favorites-scroll img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex-shrink: 0;
+}
+
+.favorites-scroll img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+/* Yeni kart yapısı */
+.fun-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
+.fun-item {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  padding: 15px 20px;
+  max-width: 650px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fun-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.fun-item img {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 15px;
+  margin-right: 20px;
+  flex-shrink: 0;
+}
+
+.fun-item p {
+  text-align: left;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.5;
+}
+
+    /* 💌 MESAJ KISMI */
+    .message-section {
+      background-color: #ffe7e3;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .message-section h2 {
+      color: #b74e4e;
+      margin-bottom: 15px;
+    }
+
+    textarea {
+      width: 80%;
+      max-width: 500px;
+      height: 120px;
+      border-radius: 15px;
+      border: none;
+      padding: 15px;
+      font-family: "Poppins", sans-serif;
+      font-size: 15px;
+      resize: none;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    button {
+      margin-top: 15px;
+      background-color: #d16d6a;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      padding: 10px 25px;
+      cursor: pointer;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #b45755;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 13px;
+      padding: 15px;
+      color: #999;
+    }
+
+    @media (max-width: 768px) {
+      .carousel img { height: 250px; }
+      .photos img { width: 150px; height: 150px; }
+      .twin-card { flex-direction: column; text-align: center; }
+      .twin-card img { margin: 0 0 15px 0; float: none; clip-path: none; shape-outside: none; }
+       .fun-item {
+    flex-direction: column;
+    text-align: center;}
+   .favorites-scroll img {
+    width: 160px;
+    height: 160px;}
+
+  .fun-item img {
+    margin: 0 0 15px 0;
+    width: 80%;
+    height: auto;
+  }
+
+  .fun-item p {
+    text-align: center;
+  }
+    }
+    .fun-section {
+  background-color: #fff9f8;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.fun-section h2 {
+  color: #d16d6a;
+  margin-bottom: 10px;
+  font-size: 1.8rem;
+}
+
+.fun-text {
+  color: #666;
+  margin-bottom: 40px;
+  font-size: 1rem;
+}
+
+.message-section {
+  background-color: #ffe7e3;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.message-section h2 {
+  color: #b74e4e;
+  margin-bottom: 15px;
+}
+
+textarea {
+  width: 80%;
+  max-width: 500px;
+  height: 120px;
+  border-radius: 15px;
+  border: none;
+  padding: 15px;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  resize: none;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+button {
+  margin-top: 15px;
+  background-color: #d16d6a;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #b45755;
+}
+
+/* Mesaj Listesi */
+.message-list {
+  margin-top: 40px;
+  background-color: #fff9f8;
+  border-radius: 15px;
+  padding: 20px;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+.message-list h3 {
+  text-align: center;
+  color: #c75a5a;
+  margin-bottom: 15px;
+}
+
+.message-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.message-list li {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 12px 15px;
+  margin-bottom: 10px;
+  font-size: 15px;
+  line-height: 1.5;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+  </style>
+</head>
+<body>
+
+  <header>✨ BETÜŞ'ÜN DÜNYASI ✨</header>
+
+  <!-- 🌸 CAROUSEL -->
+  <div class="carousel">
+    <div class="carousel-inner" id="carousel-inner">
+      <div class="carousel-item">
+        <img src="./kaydirmalı1.png" alt="slayt1">
+        <div class="caption">💞 Kardeşliğin En Tatlı Hali 💞</div>
+      </div>
+      <div class="carousel-item">
+        <img src="./kaydırmalı2.png" alt="slayt2">
+        <div class="caption">🌸 İlk Gülüşümüz 🌸</div>
+      </div>
+      <div class="carousel-item">
+        <img src="./kaydırmalı3.png" alt="slayt3">
+        <div class="caption">💗 İYİ Kİ 💗</div>
+      </div>
+    </div>
+    <button class="prev" onclick="prevSlide()">❮</button>
+    <button class="next" onclick="nextSlide()">❯</button>
+  </div>
+
+  <!-- 💕 ANA KARTLAR -->
+  <div class="main">
+    <div class="card">
+      <img class="tile-image" src="./küçüklük3.jpg" alt="bebeklik">
+      <p class="card-text">
+        Ben Zeynep Sare ablamınnn biricik KIZ KARDEŞİ ❤︎  
+        Bu siteyi ablam için hazırladım. Onunla geçirdiğim 18 yılı anlatmak isterim...  
+        Gözümü ilk açtığımda gamzeli bişey beni yiyecek gibi bakıyordu.  
+        Sonradan anladım ki o şey benim ABLAM 💕 Yeri geldi bozuk para daha değerli diyip paramı
+        cepledi yeri geldi bebekken sütüme çöreklendi (süte bayılııırrr)  amaa bi gerçek var İYİ Kİ VAR.  
+        Onu ccooookkkk amaa coooooookkk seviyorummmmm. Belki maddi değeri yok bu sitenin ama 16 ekimden
+        beri uğraştım :( SENİNNNN İÇİİNNNNNN  Herzamannnn senin yanındayım kafan bir şeye takılırsa (kii çok takıyorsuun)
+        birşeye ihtiyacın olursaaa hep burada olacagıımmmm 💖[yan tarafta devamııı]
+      </p>
+    </div>
+
+    <div class="card">
+      <img class="tile-image" src="./ikili_komik.jpg" alt="ikili fotoğraf">
+      <h2 class="card-title">İKONSAAL 💫</h2>
+      <p class="card-text">
+        Bir abla olarak hayatıma katabileceğin (dağınıklık haricccc) herr seyii fazla fazla kattın
+        iyi ki benim ablamsın DOGUM GUNUN KUTLU OLSUN ŞAPŞALŞEYYY 
+       bir efsane doğdu, ben de onun kardeşiyim 😎  
+      </p>
+    </div>
+  </div>
+
+  <!-- 💫 Favori Fotoğraflar Başlangıç -->
+<div class="favorites-section">
+  <h2>💫 Favori Fotoğraflar 💫</h2>
+  <div class="favorites-scroll">
+    <img src="./bebis.jpg" alt="favori1">
+    <img src="./küçüklük1.jpg" alt="favori2">
+    <img src="./küçüklük1dg.jpg" alt="favori3">
+    <img src="./bebis3.jpg" alt="favori4">
+    <img src="./bebis2.jpg" alt="favori5">
+    <img src="./küçüklük2_dikey.jpg" alt="favori6">
+    <img src="./IMG_4063.JPG" alt="favori7">
+    <img src="./IMG_4089.JPG" alt="favori8">
+  </div>
+</div>
+<!-- 💫 Favori Fotoğraflar Sonu -->
+
+  <!-- 💗 15 Fotoğraflık Galeri -->
+  <div class="gallery">
+    <h2>💗 Bizim Anılarımız 💗</h2>
+    <div class="photos">
+      <img src="./ikili1.jpg">
+      <img src="./ikili2.jpg">
+      <img src="./ikili3.jpg">
+      <img src="./ikili4.jpg">
+      <img src="./ikili5.jpg">
+      <img src="./ikili6.jpg">
+      <img src="./ikili7.jpg">
+      <img src="./ikili8.jpg">
+      <img src="./ikili9.jpg">
+      <img src="./ikili10.jpg">
+      <img src="./ikili11.jpg">
+      <img src="./ikili12.jpg">
+      <img src="./ikili13.jpg">
+      <img src="./ikili14.jpg">
+      <img src="./ikili15.png">
+      <img src="./ikili16.jpg">
+      <img src="./ikili17.JPG">
+      <img src="./ikili18.JPG">
+    </div>
+  </div>
+
+  <!-- 🌼 YENİ: İKİ YAN YANA CARD -->
+  <div class="twin-section">
+    <div class="twin-card">
+      <img src="./tek-baba.jpg" alt="abla foto 1">
+      <p class="twin-text">
+        Hafız kızımmmmm Betülüümmm bana kızsanda kırılsanda her zaman senin için en iyisini istiyorum.💕
+        Bazen koridordan geçerken ayağıma bavulun takılıyo ah ahh Hafız kızım burda olsa da gıcık iki numarayla uğraşmasam diyorum  🤭
+        Senin sesin evimizde yankılanan en güzel melodi 
+        Betülüümm canıım kızımm iyiki varsıın seni çoook seviyoruummm
+      </p>
+    </div>
+
+    <div class="twin-card">
+      <img src="./tek-anne.jpg" alt="abla foto 2">
+      <p class="twin-text">
+        Birlikte büyüdüğüm, ilk gözağrım, dünyanın en güzel çiçeği doğum günün kutlu olsun💗
+        Dün gibi hatırlıyorum seni kucağıma aldığımda ki mutluluğu sen bizim için rabbimizin en güzel lütfusun 💕
+        Hayırlı sağlıklı mutlu huzurlu yılların olsun canım kızımmmmm
+        Seni çok seviyorummmmm
+      </p>
+    </div>
+
+    <div class="twin-card">
+      <img src="./ikili17.JPG" alt="abla foto 3">
+      <p class="twin-text">
+        Sen benim için beyaz hindistan çevizli etipuf gibisin yumuşak ve Tatlı
+        İyiki doğdun ablam sana bağırsam da vursam da seniii çoookkk seviyoruuummm
+        yakışıklı, kaslı, güçlü kardeşin CEMAL
+      </p>
+    </div>
+  </div>
+
+  <!-- 🎉 Eğlence Bölümü Başlangıç -->
+<div class="fun-section">
+  <h2>🎉 Eğlence Zamanı 🎉</h2>
+  <p class="fun-text">En korkunc ifşalaaarrr 💫</p>
+
+  <div class="fun-gallery">
+    <div class="fun-item">
+      <img src="./ifsa_1.jpg" alt="eğlence1">
+      <p>Güzelliğinle nefesimi kestiğin o gün(!) dfrgthyjukı</p>
+    </div>
+    <div class="fun-item">
+      <img src="./ifsa_2.jpg" alt="eğlence2">
+      <p>“Kral Asenaa sannkiiii</p>
+    </div>
+    <div class="fun-item">
+      <img src="./ifsa_3.jpg" alt="eğlence3">
+      <p>Bu fotoğrafı çoookkk zor bulduumm</p>
+    </div>
+    <div class="fun-item">
+      <img src="./ifsa_4.jpg" alt="eğlence4">
+      <p>Bunlardaaa vaarrr</p>
+    </div>
+    <div class="fun-item">
+      <img src="./ifsa_5.jpg" alt="eğlence5">
+      <p>Kadın da minyon yemekte kimyoonnn</p>
+    </div>
+    <div class="fun-item">
+      <img src="./ironi.jpg" alt="eğlence6">
+      <p>Çikolatamız karışmasın diye...</p>
+    </div>
+    <div class="fun-item">
+      <img src="./ifsa_6.jpg" alt="eğlence7">
+      <p>XCVFGBHJNKMÖLŞ (bi tane daha vardı onu bulamadım :p)</p>
+    </div>
+    <div class="fun-item">
+      <img src="./ifsa_7.jpg" alt="eğlence8">
+      <p>Bu fotoğrafın hikayesini sadece biz biliriz 💫</p>
+    </div>
+    <div class="fun-item">
+      <img src="./ifsa_8.jpg" alt="eğlence9">
+      <p>Rastgele bir gün, ama çok güzel bir an 💕</p>
+    </div>
+    <div class="fun-item">
+      <img src="./ifsa_9.jpg" alt="eğlence10">
+      <p>“Son bir fotoğraf” dedik, klasik yalan 🤭</p>
+    </div>
+  </div>
+</div>
+<!-- 🎉 Eğlence Bölümü Sonu -->
+
+
+  <!-- 💌 Ablama Küçük Bir Mesaj -->
+<div class="message-section">
+  <h2>💌 Ablama Küçük Bir Mesaj 💌</h2>
+  <textarea id="messageInput" placeholder="Güzeller güzeli Betül’e ne söylemek istersin? 💕"></textarea><br>
+  <button onclick="sendMessage()">Gönder</button>
+
+  <!-- Gönderilen mesajların listeleneceği alan -->
+  <div id="messageList" class="message-list">
+    <h3>📜 Gönderilen Mesajlar</h3>
+    <ul id="messages"></ul>
+  </div>
+</div>
+
+
+  <footer>© 2025 Betüşün kardeşi güzel mi güzel Zeynep Sare'nin Tarafından Sevgiyle Yapıldı 🤍</footer>
+
+  <script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.carousel-item');
+    const total = slides.length;
+
+    function showSlide(index) {
+      const carouselInner = document.getElementById('carousel-inner');
+      if (index >= total) currentIndex = 0;
+      else if (index < 0) currentIndex = total - 1;
+      else currentIndex = index;
+      carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    function nextSlide() { showSlide(currentIndex + 1); }
+    function prevSlide() { showSlide(currentIndex - 1); }
+
+    setInterval(nextSlide, 5000);
+
+     function sendMessage() {
+    const input = document.getElementById("messageInput");
+    const messageText = input.value.trim();
+    const list = document.getElementById("messages");
+
+    if (messageText === "") {
+      alert("Bir mesaj yazmayı unuttun çitiii 💌");
+      return;
+    }
+
+    // Yeni mesaj öğesi oluştur
+    const li = document.createElement("li");
+    li.textContent = messageText;
+
+    // Listeye ekle
+    list.appendChild(li);
+
+    // Input’u temizle
+    input.value = "";
+
+    // Liste görünür olsun
+    document.getElementById("messageList").style.display = "block";
+
+    // Sayfayı aşağı kaydır (yeni mesaj görünür olsun)
+    li.scrollIntoView({ behavior: "smooth" });
+  }
+  </script>
+</body>
+</html>
